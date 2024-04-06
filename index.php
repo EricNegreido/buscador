@@ -27,16 +27,13 @@
 
   $addName = $_GET["name"];
   
-
-  $thisPage = $_SERVER["PHP_SELF"];
-
   if($addName!=""){
     $addLastName = $_GET["lastName"];
     $addDni = $_GET["dni"];
     $addAge = $_GET["age"];
     addRegister($addName, $addLastName, $addDni, $addAge);
   }else{
-    echo('<form action="' . $thisPage .'" method="get">
+    echo('<form action="' . $mipag .'" method="get">
       <label for="name">Nombre: 
         <input type="text" name="name" required>
       </label>
@@ -44,7 +41,7 @@
         <input type="text" name="lastName" required>
       </label>
       <label for="dni">: 
-        <input type="number" name="dni">
+        <input type="number" name="dni" required>
       </label>
       <label for="age">: 
         <input type="number" name="age">

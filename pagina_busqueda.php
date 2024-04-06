@@ -36,7 +36,12 @@
           echo $fila["name"] . " ";
           echo $fila["last_name"];
           echo $fila["age"] . "<br>";
-  };
-  mysqli_close($conexion);
-}
+
+          echo '<form action="eliminar_registro.php" method="post">;
+          <input type="hidden" name="dni" value="' . $fila["dni"] . '">
+          <input type="submit" name="DEL" value="Eliminar">
+          </form>';
+      mysqli_close($conexion);
+    }
+  }
 ?>
