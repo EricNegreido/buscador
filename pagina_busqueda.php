@@ -13,6 +13,9 @@
   // }  
 
   $conexion = mysqli_connect($db_host, $db_usuario, $db_contra);
+  
+  // con mysqli_real_escape_string evitamos la inyeccion de datos, esta funcion no permite caracteres indebidos
+  $mibusqueda = mysqli_real_escape_string($conexion, $data);
 
   if(mysqli_connect_errno()){
     echo "Fallo al conectar con la BBDD";
@@ -21,7 +24,7 @@
 
   mysqli_select_db($conexion, $db_nombre) or die("No se encuetra la BDD");
   mysqli_set_charset($conexion, "utf8");
-  $consulta = "SELECT * FROM persons WHERE name LIKE'%$data%'";
+  $consulta = "SELECT * FROM persons WHERE name LIKE'%$mibusqueda%'";
 
   $resultado = mysqli_query($conexion, $consulta);
   

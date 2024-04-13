@@ -8,13 +8,13 @@
     <?php  require("add_register.php")?>
     <?php  require("busqueda_update.php")?>
 
+
 </head>
 <body>
-  <?php 
+  <?php
+
   $mibusqueda = $_GET["buscar"];
   $actualizar = $_GET["actualizar"];
-
-
   $mipag = $_SERVER["PHP_SELF"];
 
   if($mibusqueda!=NULL){
